@@ -19,11 +19,14 @@ steps:
   - script: sudo gem install bundler
     displayName: 'Install Bundler'
 
-  - script: sudo gem install nokogiri -- --use-system-libraries
+  - script: sudo gem install nokogiri
     displayName: 'Install Nokogiri '
 
   - script: bundle install
     displayName: 'Install all of the required gems'
+
+  - script: bundle config build.nokogiri --use-system-libraries
+    displayName: 'Config nokogiri to build using system libraries'
 
   - script: bundle exec rake book:build
     displayName: 'Generate the books'
