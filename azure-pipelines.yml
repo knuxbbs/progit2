@@ -19,7 +19,7 @@ steps:
   - script: sudo gem install bundler
     displayName: 'Install Bundler'
 
-  - script: sudo gem install nokogiri --use-system-libraries
+  - script: sudo gem install nokogiri -- --use-system-libraries
     displayName: 'Install Nokogiri '
 
   - script: bundle install
