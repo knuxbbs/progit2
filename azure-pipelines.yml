@@ -11,10 +11,10 @@ pool:
 
 steps:
   - script: sudo apt-get install -y ruby
-    displayName: 'Install Bundler'
+    displayName: 'Install Ruby'
 
-  - script: gem install bundler
-    displayName: 'Update system rubygems'
+  - script: sudo gem install bundler
+    displayName: 'Install Bundler'
 
   - script: bundle config build.nokogiri --use-system-libraries
     displayName: 'Config nokogiri to build using system libraries'
