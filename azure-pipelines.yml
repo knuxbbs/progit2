@@ -10,17 +10,17 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-  - script: sudo apt-get install -y ruby-bundler
+  - script: sudo apt-get install -y ruby
     displayName: 'Install Bundler'
 
-  - script: sudo gem update --system
+  - script: gem install bundler
     displayName: 'Update system rubygems'
-
-  - script: bundle install
-    displayName: 'Install all of the required gems'
 
   - script: bundle config build.nokogiri --use-system-libraries
     displayName: 'Config nokogiri to build using system libraries'
+
+  - script: bundle install
+    displayName: 'Install all of the required gems'
 
   - script: bundle exec rake book:build
     displayName: 'Generate the books'
