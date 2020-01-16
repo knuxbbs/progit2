@@ -1,6 +1,6 @@
 #!/bin/sh
 [ -d images ] || mkdir images
-for image in book/*/images/*; do
+for image in ./book/*/images/*; do
     cp "$image" "images/$(basename "$image")"
 done
 

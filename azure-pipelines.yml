@@ -10,10 +10,14 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+  - script: sudo apt install -y ruby-bundler
+  displayName: 'Install Bundler'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  - script: gem update --system
+  displayName: 'Update system rubygems'
+
+  - script: bundle config build.nokogiri --use-system-libraries ---
+  displayName: 'Config nokogiri to build using system libraries'
+
+  - script: bundle exec rake book:build ---
+  displayName: 'Generate the books'
