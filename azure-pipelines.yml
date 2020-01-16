@@ -23,6 +23,6 @@ steps:
   - task: PublishBuildArtifacts@1
     displayName: Publish generated books
     inputs:
-      pathtoPublish: build-output/
-      artifactName: progit2
-      publishLocation: container
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      ArtifactName: 'progit2'
+      publishLocation: 'Container'
