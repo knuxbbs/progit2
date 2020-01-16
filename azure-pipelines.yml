@@ -10,10 +10,10 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-  - script: sudo apt install -y ruby-bundler
+  - script: sudo apt-get install -y ruby-bundler
     displayName: 'Install Bundler'
 
-  - script: gem update --system
+  - script: sudo gem update --system
     displayName: 'Update system rubygems'
 
   - script: bundle config build.nokogiri --use-system-libraries ---
