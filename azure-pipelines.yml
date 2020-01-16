@@ -16,8 +16,11 @@ steps:
   - script: sudo gem install bundler
     displayName: 'Install Bundler'
 
-  - script: bundle config build.nokogiri --use-system-libraries
-    displayName: 'Config nokogiri to build using system libraries'
+  - script: sudo gem install bundler
+    displayName: 'Install Bundler'
+
+  - script: sudo gem install nokogiri --use-system-libraries
+    displayName: 'Install Nokogiri '
 
   - script: bundle install
     displayName: 'Install all of the required gems'
